@@ -1,0 +1,32 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  width: 80%; /* Set the width to half of the container */
+  margin: 0 auto; /* Center the filters within the container */
+  flex-wrap: wrap;
+}
+
+.filters > div {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.filters > div:last-child {
+  margin-right: 0;
+}
+
+#title_or_name {
+    width: 90%;
+    height: 50%;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters > div {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .filters > div:last-child {
+    margin-bottom: 0;
+  }
+}
