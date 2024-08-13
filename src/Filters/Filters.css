@@ -1,8 +1,8 @@
 .filters {
   display: flex;
   justify-content: space-between;
-  width: 80%; /* Set the width to half of the container */
-  margin: 0 auto; /* Center the filters within the container */
+  width: 80%;
+  margin: 0 auto;
   flex-wrap: wrap;
 }
 
@@ -19,7 +19,7 @@
     width: 90%;
     height: 50%;
 }
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .filters > div {
     margin-right: 0;
