@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { AppHeader } from "../AppHeader/AppHeader";
 import { Filters, Genre } from "../Filters/Filters";
 import { VideoList } from "../VideoList/VideoList";
@@ -66,17 +66,17 @@ function HomePage() {
     return filtered;
   };
 
-  const onFilterByGenre = (selectedGenres: Genre[]) => {
+  const onFilterByGenre = useCallback((selectedGenres: Genre[]) => {
     setSelectedGenres(selectedGenres);
-  };
+  }, []);
 
-  const onFilterByYear = (release_year?: number) => {
+  const onFilterByYear = useCallback((release_year?: number) => {
     setSelectedYear(release_year);
-  };
+  }, []);
 
-  const onFilterByName = (name: string) => {
+  const onFilterByName = useCallback((name: string) => {
     setSelectedName(name);
-  }
+  }, []);
 
   useEffect(() => {
     const filtered:VideoItem[] = applyFilters(videos, selectedGenres, selectedYear, selectedName);

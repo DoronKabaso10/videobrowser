@@ -14,7 +14,7 @@ interface VideoProps {
   videoItem: VideoItem;
 }
 
-export const VideoCard: React.FC<VideoProps> = ({ videoItem }) => {
+export const VideoCard: React.FC<VideoProps> = React.memo(({ videoItem }) => {
   return (
     <div className="video-card">
       <img src={videoItem.image_url} alt={videoItem.title} />
@@ -25,4 +25,4 @@ export const VideoCard: React.FC<VideoProps> = ({ videoItem }) => {
       </div>
     </div>
   );
-};
+});
